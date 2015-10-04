@@ -6,7 +6,7 @@
 var request = require('request')
 
 
-module.exports = function index( options ){
+module.exports = function search( options ){
   var seneca = this
 
   options = seneca.util.deepextend({
