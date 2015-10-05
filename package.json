@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-search",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "nodezoo-search",
   "main": "search.js",
   "keywords": [
@@ -12,7 +12,7 @@
   "author": "Richard Rodger (http://richardrodger.com)",
   "license": "MIT",
   "dependencies": {
-    "seneca": "^0.7.0",
-    "request": "^2.40.0"
+    "seneca": "^0.7.1",
+    "request": "^2.64.0"
   }
 }
