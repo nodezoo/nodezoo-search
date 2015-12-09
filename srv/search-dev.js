@@ -1,6 +1,6 @@
 var ELASTIC = process.env.ELASTIC || 'localhost'
 
-require('seneca')()
+require('seneca')()//{debug:{act_caller:true}})
   .use('../search.js',{elastic:{host:ELASTIC}})
-  .listen(44002)
-  .repl(43002)
+  .use('mesh',{auto:true, pin:'role:search'})
+  .repl(33002)
