@@ -16,5 +16,8 @@
     "seneca": "https://github.com/senecajs/seneca",
     "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
     "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client"
+  },
+  "scripts": {
+    "lint": "lab test -dL"
   }
 }
