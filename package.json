@@ -14,7 +14,7 @@
   "dependencies": {
     "request": "2.64.0",
     "seneca": "https://github.com/senecajs/seneca",
-    "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats",
+    "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats#ratios",
     "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
     "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client"
   }
