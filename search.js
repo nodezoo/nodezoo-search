@@ -2,7 +2,7 @@
 /* jshint node:true, asi:true, eqnull:true */
 'use strict'
 
-const request = require('request')
+const Request = require('request')
 
 module.exports = function search (options) {
   const seneca = this
@@ -24,7 +24,7 @@ module.exports = function search (options) {
 
     const url = 'http://' + elastic.host + ' : ' + elastic.port + '/' + elastic.base + '/mod/' + args.data.name
 
-    request(
+    Request(
       {
         url: url,
         method: 'POST',
@@ -38,12 +38,12 @@ module.exports = function search (options) {
   function cmd_search (args, done) {
     // var seneca  = this
 
-    var elastic = options.elastic
+    const elastic = options.elastic
 
-    var url = 'http://' + elastic.host + ':' + elastic.port + '/' + elastic.base +
+    const url = 'http://' + elastic.host + ':' + elastic.port + '/' + elastic.base +
           '/_search?q=' + encodeURIComponent(args.query)
 
-    request(
+    Request(
       {
         url: url,
         method: 'GET'
@@ -51,19 +51,19 @@ module.exports = function search (options) {
       function (err, res, body) {
         if (err) return done(err)
 
-        var qr = JSON.parse(body)
-        var items = []
+        const qr = JSON.parse(body)
+        const items = []
 
-        var hits = qr.hits && qr.hits.hits
+        const hits = qr.hits && qr.hits.hits
 
         if (hits) {
           for (var i = 0; i < hits.length; i++) {
-            var hit = hits[i]
+            const hit = hits[i]
             items.push(hit._source)
           }
         }
 
-        return done(null, {items: items})
+        return done(null, { items: items })
       })
   }
 }
