@@ -4,9 +4,6 @@
   "description": "nodezoo-search",
   "main": "search.js",
   "keywords": [
-    "nodezoo",
-    "seneca",
-    "search",
     "microservice"
   ],
   "author": "Richard Rodger (http://richardrodger.com)",
