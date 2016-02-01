@@ -9,6 +9,13 @@ system. Please see the [main repo][] for more details
 ## Install
 npm install nodezoo-search
 
+## Messages
+This micro-service recognizes the following messages:
+
+   * _role:search,cmd:insert_ - insert module details into search engine index
+   * _role:search,cmd:search_ - query the search engine
+
+ 
 ## Contributing
 The [NodeZoo][] org encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
 
