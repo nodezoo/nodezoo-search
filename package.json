@@ -10,6 +10,9 @@
     "microservice"
   ],
   "author": "Richard Rodger (http://richardrodger.com)",
+  "contributors":[
+    "Matthew O'Connor (https://github.com/matthewoconnor-development)"
+  ],
   "license": "MIT",
   "dependencies": {
     "request": "2.64.0",
