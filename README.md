@@ -40,7 +40,7 @@ The [NodeZoo][] org encourages __open__ and __safe__ participation. If you feel 
 - Before contributing please review our [Code of Conduct][CoC]
 
 ## License
-Copyright (c) 2016, Richard Rodger and other contributors.
+Copyright (c) 2014 - 2016, Richard Rodger and other contributors.
 Licensed under [MIT][].
 
 

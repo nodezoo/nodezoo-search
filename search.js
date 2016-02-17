@@ -1,4 +1,4 @@
-/* Copyright (c) 2016 Richard Rodger, MIT License */
+/* Copyright (c) 2014 - 2016 Richard Rodger, MIT License */
 /* jshint node:true, asi:true, eqnull:true */
 "use strict";
 
