@@ -1,3 +1,4 @@
+'use strict'
 var ELASTIC = process.env.ELASTIC || 'localhost'
 var STATS = process.env.STATS || 'localhost'
 
