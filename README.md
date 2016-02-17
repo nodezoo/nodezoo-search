@@ -51,4 +51,3 @@ Licensed under [MIT][].
 [main repo]: https://github.com/rjrodger/nodezoo
 [CoC]: ./CoC.md
 [Lead]: https://github.com/rjrodger
-
