@@ -18,6 +18,8 @@
     "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client"
   },
   "scripts": {
+    "start:dev": "node srv/search-dev.js",
+    "start": "node srv/search-dev.js",
     "lint": "lab test -dL"
   },
   "devDependencies": {
