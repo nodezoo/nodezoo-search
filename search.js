@@ -1,79 +1,69 @@
 /* Copyright (c) 2014 - 2016 Richard Rodger, MIT License */
 /* jshint node:true, asi:true, eqnull:true */
-"use strict";
+'use strict'
 
+const Request = require('request')
 
-var request = require('request')
-
-
-module.exports = function search( options ){
-  var seneca = this
+module.exports = function search (options) {
+  const seneca = this
 
   options = seneca.util.deepextend({
     elastic: {
       host: 'localhost',
       port: 9200,
       base: 'zoo'
-    },
-  },options)
+    }
+  }, options)
 
+  seneca.add('role:search,cmd:insert', cmd_insert)
+  seneca.add('role:search,cmd:search', cmd_search)
 
-  seneca.add( 'role:search,cmd:insert', cmd_insert )
-  seneca.add( 'role:search,cmd:search', cmd_search )
+  const cmd_insert = function (args, done) {
+    // const seneca  = this;
+    const elastic = options.elastic
 
+    const url = 'http://' + elastic.host + ' : ' + elastic.port + '/' + elastic.base + '/mod/' + args.data.name
 
-  function cmd_insert( args, done ) {
-    var seneca  = this
-
-    var elastic = options.elastic
-
-    var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
-          '/mod/'+args.data.name
-
-    request(
+    Request(
       {
-        url:    url,
+        url: url,
         method: 'POST',
-        json:   args.data
-      }, 
-      function(err,res,body){
-        done(err,body)
+        json: args.data
+      },
+      function (err, res, body) {
+        done(err, body)
       })
   }
 
+  function cmd_search (args, done) {
+    // var seneca  = this
 
-  function cmd_search( args, done ) {
-    var seneca  = this
+    const elastic = options.elastic
 
-    var elastic = options.elastic
+    const url = 'http://' + elastic.host + ':' + elastic.port + '/' + elastic.base +
+          '/_search?q=' + encodeURIComponent(args.query)
 
-    var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
-          '/_search?q='+encodeURIComponent(args.query)
-
-    request(
+    Request(
       {
-        url:    url,
-        method: 'GET',
-      }, 
-      function(err,res,body){
-        if( err ) return done(err);
+        url: url,
+        method: 'GET'
+      },
+      function (err, res, body) {
+        if (err) return done(err)
 
-        var qr = JSON.parse(body)
-        var items = []
+        const qr = JSON.parse(body)
+        const items = []
 
-        var hits = qr.hits && qr.hits.hits
+        const hits = qr.hits && qr.hits.hits
 
-        if( hits ) {
-          for( var i = 0; i < hits.length; i++ ) {
-            var hit = hits[i]
-            items.push( hit._source )
+        if (hits) {
+          for (var i = 0; i < hits.length; i++) {
+            const hit = hits[i]
+            items.push(hit._source)
           }
         }
 
-        return done(null,{items:items})
+        return done(null, { items: items })
       })
   }
-
-    
 }
-
