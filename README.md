@@ -1,4 +1,4 @@
-![logo-nodezoo](https://raw.githubusercontent.com/rjrodger/nodezoo-web/to-redux/client/assets/img/logo-nodezoo.png)
+![Logo](https://raw.githubusercontent.com/nodezoo/org/master/assets/img/logo-nodezoo.png)
 
 # nodezoo-Search
 
