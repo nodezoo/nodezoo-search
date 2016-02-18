@@ -1,7 +1,17 @@
 'use strict'
-var ELASTIC = process.env.ELASTIC || 'localhost'
-var STATS = process.env.STATS || 'localhost'
+
+var opts = {
+  search: {
+    elastic: {
+      host: process.env.ELASTIC || 'localhost'
+    }
+  },
+  mesh: {
+    auto: true,
+    pin: 'role:search'
+  }
+}
 
 require('seneca')()
-  .use('../search.js',{elastic:{host:ELASTIC}})
-  .use('mesh',{auto:true, pin:'role:search'})
+  .use('../search.js', opts.search)
+  .use('mesh', opts.mesh)

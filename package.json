@@ -19,7 +19,6 @@
     "toolbag": "0.9.0"
   },
   "scripts": {
-    "start:dev": "node srv/search-dev.js",
     "start": "node srv/search-dev.js",
     "lint": "lab test -dL"
   },
