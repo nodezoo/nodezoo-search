@@ -47,7 +47,7 @@ module.exports = function search( options ){
     var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
           '/_search?q='+encodeURIComponent(args.query)
 
-    request(
+    Request(
       {
         url:    url,
         method: 'GET',
