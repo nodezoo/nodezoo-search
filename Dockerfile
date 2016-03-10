@@ -1,20 +1,13 @@
-# nodezoo-search
-
+#nodezoo-search
 FROM node:4
 
-ADD . /
+RUN mkdir /src
+ADD package.json /src/
 
-EXPOSE 44002
-EXPOSE 43002
+WORKDIR /src
 
-CMD ["node","srv/search-dev.js","--seneca.options.tag=search","--seneca.log.all"]
+RUN npm install
 
-# build and run:
-# $ docker build -t nodezoo-search-04 .
-# $ docker run -d -p 44002:44002 -p 43002:43002 -e ELASTIC=192.168.99.1 nodezoo-search-04
-# local docker ip:
-# $ docker-machine ip default
+COPY . /src
 
-
-
-
+CMD ["node", "-r", "toolbag", "srv/search-dev.js", "--seneca.options.tag=nodezoo-search", "--seneca-log=type:act"]

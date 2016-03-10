@@ -1,9 +1,6 @@
-/* Copyright (c) 2014-2015 Richard Rodger, MIT License */
-/* jshint node:true, asi:true, eqnull:true */
-"use strict";
+'use strict'
 
-
-var request = require('request')
+var Request = require('request')
 
 
 module.exports = function search( options ){
@@ -15,7 +12,7 @@ module.exports = function search( options ){
       port: 9200,
       base: 'zoo'
     },
-  },options)
+  }, options)
 
 
   seneca.add( 'role:search,cmd:insert', cmd_insert )
@@ -30,12 +27,12 @@ module.exports = function search( options ){
     var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
           '/mod/'+args.data.name
 
-    request(
+    Request(
       {
         url:    url,
         method: 'POST',
         json:   args.data
-      }, 
+      },
       function(err,res,body){
         done(err,body)
       })
@@ -50,11 +47,11 @@ module.exports = function search( options ){
     var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
           '/_search?q='+encodeURIComponent(args.query)
 
-    request(
+    Request(
       {
         url:    url,
         method: 'GET',
-      }, 
+      },
       function(err,res,body){
         if( err ) return done(err);
 
@@ -74,6 +71,5 @@ module.exports = function search( options ){
       })
   }
 
-    
-}
 
+}
