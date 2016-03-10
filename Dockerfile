@@ -1,8 +1,13 @@
+#nodezoo-search
 FROM node:4
 
-ADD . /
+RUN mkdir /src
+ADD package.json /src/
 
-EXPOSE 44002
-EXPOSE 43002
+WORKDIR /src
 
-CMD ["node", "srv/search-dev.js", "--seneca.options.tag=search", "--seneca.log.all"]
+RUN npm install
+
+COPY . /src
+
+CMD ["node", "-r", "toolbag", "srv/search-dev.js", "--seneca.options.tag=nodezoo-search", "--seneca-log=type:act"]
