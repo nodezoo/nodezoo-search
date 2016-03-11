@@ -13,9 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "request": "2.64.0",
-    "seneca": "https://github.com/senecajs/seneca",
-    "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client",
-    "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
+    "seneca": "^1.3.0",
+    "seneca-balance-client": "^0.4.0",
+    "seneca-mesh": "^0.6.0",
     "toolbag": "0.9.0"
   },
   "scripts": {
