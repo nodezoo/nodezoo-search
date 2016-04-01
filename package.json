@@ -11,6 +11,14 @@
     "Matthew O'Connor (https://github.com/matthewoconnor-development)",
     "Shane Lacey (https://github.com/shanel262)"
   ],
+  "homepage": "https://github.com/nodezoo/nodezoo-search#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodezoo/nodezoo-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodezoo/nodezoo-search/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "request": "2.64.0",
