@@ -8,7 +8,10 @@ var opts = {
   },
   mesh: {
     auto: true,
-    pin: 'role:search, cmd:*'
+    pin: [
+      'role:search, cmd:*',
+      'role:info, info:updated'
+    ]
   }
 }
 
