@@ -15,10 +15,6 @@ link below for details on obtaining and running the complete system.
 
 - [Nodezoo: The complete system][System]
 
-### Install
-1. Clone this repo.
-2. Run `npm install`
-
 ## Patterns Handled
 
 ### `role:search,cmd:upsert`
