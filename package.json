@@ -2,13 +2,12 @@
   "name": "nodezoo-search",
   "version": "5.0.0",
   "description": "nodezoo-search",
-  "main": "search.js",
-  "keywords": [
-    "microservice"
-  ],
+  "main": "lib/search.js",
+  "license": "MIT",
   "author": "Richard Rodger (http://richardrodger.com)",
   "contributors": [
-    "Matthew O'Connor (https://github.com/matthewoconnor-development)",
+    "Dean McDonnell (https://github.com/mcdonnelldean)",
+    "Matthew O'Connor (https://github.com/mat-oc)",
     "Shane Lacey (https://github.com/shanel262)"
   ],
   "homepage": "https://github.com/nodezoo/nodezoo-search#readme",
@@ -19,18 +18,19 @@
   "bugs": {
     "url": "https://github.com/nodezoo/nodezoo-search/issues"
   },
-  "license": "MIT",
-  "dependencies": {
-    "elasticsearch": "^10.1.3",
-    "request": "2.64.0",
-    "seneca": "2.0.0",
-    "seneca-balance-client": "0.4.0",
-    "seneca-mesh": "0.7.0",
-    "toolbag": "2.0.0"
-  },
+  "keywords": [
+    "microservice"
+  ],
   "scripts": {
-    "start": "node srv/search-dev.js",
+    "start": "node srv/start.js",
     "lint": "lab test -dL"
+  },
+  "dependencies": {
+    "elasticsearch": "10.1.x",
+    "seneca": "2.0.x",
+    "seneca-balance-client": "0.4.x",
+    "seneca-mesh": "0.7.x",
+    "toolbag": "2.0.x"
   },
   "devDependencies": {
     "eslint-config-seneca": "1.1.x",
