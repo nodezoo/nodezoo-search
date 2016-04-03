@@ -9,19 +9,15 @@ A micro-service that provides search for [NodeZoo][]. This micro-service require
 instance of elastic-search running in order to correctly function. If elastic-search
 cannot be reached the service will self terminate.
 
-## Running Locally
+## Running
+This micro-service can be ran as part of the [Nodezoo][] system. Please follow the
+link below for details on obtaining and running the complete system.
+
+- [Nodezoo: The complete system][System]
 
 ### Install
 1. Clone this repo.
 2. Run `npm install`
-
-### Start
-Elastic search must be running before the service starts. We provide a
-docker-compose file to use. If you already have elastic search running locally you
-can ignore the first below.
-
-1. Start elastic search or run `docker-compose -f test/elastic.yml up`
-2. `npm run start`
 
 ## Patterns Handled
 
@@ -73,4 +69,5 @@ Licensed under [MIT][].
 [Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
 
 [NodeZoo]: https://github.com/nodezoo/nodezoo
+[System]: https://github.com/nodezoo/nodezoo-system
 [JSonic]: https://github.com/rjrodger/jsonic
