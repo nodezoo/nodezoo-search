@@ -1,0 +1,9 @@
+# Elastic Search
+# Usage: docker-compose -f test/elastic.yml up
+
+elastic_search:
+  image: elasticsearch
+  command: elasticsearch --network.bind_host=0.0.0.0 --network.publish_host=localhost
+  ports:
+    - 9200:9200
+    - 9300:9300
