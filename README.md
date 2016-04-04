@@ -9,6 +9,12 @@ A micro-service that provides search for [NodeZoo][]. This micro-service require
 instance of elastic-search running in order to correctly function. If elastic-search
 cannot be reached the service will self terminate.
 
+If you're using this microservice, and need help, you can:
+
+- Post a [github issue][],
+- Tweet to [@nodezoo][],
+- Ask on the [Gitter][gitter-url].
+
 ## Running
 This micro-service can be ran as part of the [Nodezoo][] system. Please follow the
 link below for details on obtaining and running the complete system.
@@ -63,7 +69,9 @@ Licensed under [MIT][].
 [main repo]: https://github.com/rjrodger/nodezoo
 [Lead]: https://github.com/rjrodger
 [Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
-
 [NodeZoo]: https://github.com/nodezoo/nodezoo
 [System]: https://github.com/nodezoo/nodezoo-system
 [JSonic]: https://github.com/rjrodger/jsonic
+[github issue]: https://github.com/nodezoo/nodezoo-search/issues
+[@nodezoo]: http://twitter.com/nodezoo
+[gitter-url]: https://gitter.im/nodezoo/nodezoo-org
