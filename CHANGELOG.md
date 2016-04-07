@@ -1,8 +1,11 @@
 Pending - x.x.x
 ---
-* Added CHANGELOG.md
+* Added CHANGELOG.md.
 * Results set refactored.
-* github user added to results set.
+* GitHub user added to results set.
+* Added isolated mode.
+* Corrected issue with missing author.
+* Updated README to correct errata.
 
 6 April 2016 - 6.0.0
 ---
