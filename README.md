@@ -71,15 +71,15 @@ all available variable names.
 
 #### SEARCH_PORT
   - The port to listen on in isolated mode.
-  - Defaults to `8052` .
+  - Defaults to `8060` .
 
-#### SEARCH_HOST
-  - The host to listen on in isolated mode.
+#### SEARCH_ELASTIC_HOST
+  - The host elastic will listen on.
   - Defaults to `localhost`
 
-#### SEARCH_PORT
-  - The port to listen on in isolated mode.
-  - Defaults to `8052` .
+#### SEARCH_ELASTIC_PORT
+  - The port elastic will listen on.
+  - Defaults to `9200` .
 
 #### SEARCH_ISOLATED
   - Starts isolated mode.
