@@ -11,4 +11,4 @@ RUN npm install
 
 COPY . /src
 
-CMD ["node", "-r", "toolbag", "srv/start.js", "--seneca-log=type:act"]
+CMD ["node", "srv/start.js", "--seneca-log=type:act"]

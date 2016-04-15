@@ -6,6 +6,7 @@
 * Added isolated mode.
 * Corrected issue with missing author.
 * Updated README to correct errata.
+* Removed toolbag
 
 ## 6 April 2016 - 6.0.0
 
