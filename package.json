@@ -30,8 +30,7 @@
     "elasticsearch": "10.1.x",
     "seneca": "2.0.x",
     "seneca-balance-client": "0.4.x",
-    "seneca-mesh": "0.7.x",
-    "toolbag": "2.0.x"
+    "seneca-mesh": "0.7.x"
   },
   "devDependencies": {
     "code": "2.1.x",
