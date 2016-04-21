@@ -24,7 +24,8 @@
   "scripts": {
     "start": "node srv/start.js",
     "isolated": "SEARCH_ISOLATED=true node srv/start.js",
-    "lint": "lab test -dL"
+    "lint": "lab test -dL",
+    "test": "lab -v -P test -L -c -t 0"
   },
   "dependencies": {
     "elasticsearch": "10.1.x",
