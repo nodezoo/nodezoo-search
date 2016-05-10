@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-search",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "nodezoo-search",
   "main": "lib/search.js",
   "license": "MIT",
