@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-search",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "nodezoo-search",
   "main": "lib/search.js",
   "license": "MIT",
@@ -30,7 +30,7 @@
   "dependencies": {
     "elasticsearch": "10.1.x",
     "seneca": "2.0.x",
-    "seneca-balance-client": "0.4.x",
+    "seneca-balance-client": "0.5.x",
     "seneca-mesh": "0.7.x"
   },
   "devDependencies": {
