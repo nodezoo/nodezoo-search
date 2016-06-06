@@ -20,9 +20,9 @@ var opts = {
     host: envs.SEARCH_HOST || '127.0.0.1',
     bases: [envs.BASE_HOST || '127.0.0.1:39999'],
     listen: [
-      {pin: 'role:search,cmd:upsert', model: 'consume'},
-      {pin: 'role:search,cmd:search', model: 'consume'},
-      {pin: 'role:info,info:updated', model: 'observe'}
+      {pin: 'role:search,cmd:upsert', model: 'consume', host: envs.SEARCH_HOST || '127.0.0.1'},
+      {pin: 'role:search,cmd:search', model: 'consume', host: envs.SEARCH_HOST || '127.0.0.1'},
+      {pin: 'role:info,info:updated', model: 'observe', host: envs.SEARCH_HOST || '127.0.0.1'}
     ]
   },
   isolated: {
