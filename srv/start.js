@@ -17,6 +17,8 @@ var opts = {
   },
   mesh: {
     auto: true,
+    host: envs.SEARCH_HOST || '127.0.0.1',
+    bases: [envs.BASE_HOST || '127.0.0.1:39999'],
     listen: [
       {pin: 'role:search,cmd:upsert', model: 'consume'},
       {pin: 'role:search,cmd:search', model: 'consume'},
