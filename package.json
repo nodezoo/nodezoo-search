@@ -21,6 +21,13 @@
   "keywords": [
     "microservice"
   ],
+  "files": [
+    "lib",
+    "srv",
+    "CHANGELOG.md",
+    "Dockerfile",
+    "README.md"
+  ],
   "scripts": {
     "start": "node srv/start.js",
     "isolated": "SEARCH_ISOLATED=true node srv/start.js",
