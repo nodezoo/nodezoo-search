@@ -86,7 +86,7 @@ all available variable names.
   - Defaults to `false`.
 
 ## Messages Handled
-This micro-service emits the following messages.
+This micro-service handles the following messages.
 
 ### `role:search,cmd:upsert`
 Adds or inserts a record into elastic search
