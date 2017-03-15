@@ -4,7 +4,7 @@ services:
   - elasticsearch
 
 before_script:
-  - sleep 10
+  - sleep 22
 
 node_js:
   - '4'

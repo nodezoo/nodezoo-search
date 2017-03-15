@@ -23,7 +23,7 @@ describe('search', function () {
       .test(done)
 
     // Uncomment if you want to see detailed logs
-      //.test(done, 'print')
+      .test(done, 'print')
 
     // Load the search plugin
       .use('..')
@@ -44,7 +44,7 @@ describe('search', function () {
         
         done()
       })
-    }, 333)
+    }, 999)
   })
 })
 
