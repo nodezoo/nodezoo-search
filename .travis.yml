@@ -1,10 +1,12 @@
+sudo: required
 language: node_js
+
 
 services:
   - elasticsearch
 
 before_script:
-  - sleep 22
+  - sleep 33
 
 node_js:
   - '4'

@@ -49,7 +49,7 @@ describe('search', function () {
         
         done()
       })
-    }, 2222)
+    }, 3333)
   })
 })
 
