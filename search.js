@@ -1,12 +1,10 @@
-/* Copyright (c) 2014-2015 Richard Rodger, MIT License */
-/* jshint node:true, asi:true, eqnull:true */
-"use strict";
+/* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
+
+var Wreck = require('wreck')
 
 
-var request = require('request')
 
-
-module.exports = function search( options ){
+module.exports = function search (options) {
   var seneca = this
 
   options = seneca.util.deepextend({
@@ -22,58 +20,48 @@ module.exports = function search( options ){
   seneca.add( 'role:search,cmd:search', cmd_search )
 
 
-  function cmd_insert( args, done ) {
-    var seneca  = this
+  function cmd_insert (msg, reply) {
+    var seneca = this
 
     var elastic = options.elastic
 
-    var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
-          '/mod/'+args.data.name
+    var url = 'http://'+elastic.host+':'+elastic.port+
+          '/'+elastic.base+'/mod/'+msg.data.name
 
-    request(
-      {
-        url:    url,
-        method: 'POST',
-        json:   args.data
-      }, 
-      function(err,res,body){
-        done(err,body)
+    Wreck.post(
+      url,
+      {json: true, payload: seneca.util.clean(msg.data)},
+      function (err, res, payload) {
+        reply(err, payload)
       })
   }
 
 
-  function cmd_search( args, done ) {
-    var seneca  = this
+  function cmd_search (msg, reply) {
+    var seneca = this
 
     var elastic = options.elastic
 
-    var url = 'http://'+elastic.host+':'+elastic.port+'/'+elastic.base+
-          '/_search?q='+encodeURIComponent(args.query)
+    var url = 'http://'+elastic.host+':'+elastic.port+
+          '/'+elastic.base+'/_search?q='+encodeURIComponent(msg.query)
 
-    request(
-      {
-        url:    url,
-        method: 'GET',
-      }, 
-      function(err,res,body){
-        if( err ) return done(err);
+    Wreck.get(url, {json: true}, function (err, res, payload) {
+      if( err ) return reply(err)
 
-        var qr = JSON.parse(body)
-        var items = []
+      var qr = payload
+      var items = []
 
-        var hits = qr.hits && qr.hits.hits
+      var hits = qr.hits && qr.hits.hits
 
-        if( hits ) {
-          for( var i = 0; i < hits.length; i++ ) {
-            var hit = hits[i]
-            items.push( hit._source )
-          }
+      if( hits ) {
+        for( var i = 0; i < hits.length; i++ ) {
+          var hit = hits[i]
+          items.push( seneca.util.clean(hit._source) )
         }
-
-        return done(null,{items:items})
-      })
+      }
+      
+      reply({items:items})
+    })
   }
-
-    
 }
 

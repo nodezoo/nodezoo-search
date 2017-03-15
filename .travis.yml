@@ -1,0 +1,11 @@
+language: node_js
+
+services:
+  - elasticsearch
+
+before_script:
+  - sleep 10
+
+node_js:
+  - '4'
+  - '6'

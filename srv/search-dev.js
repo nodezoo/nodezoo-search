@@ -1,12 +1,20 @@
+/* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
+
 var ELASTIC = process.env.ELASTIC || 'localhost'
-var STATS = process.env.STATS || 'localhost'
 
-require('seneca')()
-  .use('../search.js',{elastic:{host:ELASTIC}})
 
-  .use('msgstats',{
-    udp: { host: STATS }
+var Seneca = require('seneca')
+
+
+Seneca({tag: 'search'})
+  .test('print')
+
+  .use('..', {
+    elastic: {
+      host: ELASTIC
+    }
   })
 
-  .use('mesh',{auto:true, pin:'role:search'})
+  .use('seneca-repl', {port:10020})
 
+  .listen(9020)
