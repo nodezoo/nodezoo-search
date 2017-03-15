@@ -15,6 +15,11 @@ describe('search', function () {
   it('happy', {timeout: 7777}, function (done) {
     var mod = 'mod'+((Math.random()+'').substring(2))
 
+    require('wreck').get('http://localhost:9200/', function (err, res, payload) {
+      console.log(payload.toString())
+    })
+
+
     var seneca = Seneca()
 
     seneca
@@ -44,7 +49,7 @@ describe('search', function () {
         
         done()
       })
-    }, 999)
+    }, 2222)
   })
 })
 
