@@ -1,14 +1,13 @@
 /* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
 
-
+var PORT = process.env.PORT || 9000
 var ELASTIC = process.env.ELASTIC || 'localhost'
-
 
 var Seneca = require('seneca')
 
-
 Seneca({tag: 'search'})
   .test('print')
+  .listen(PORT)
 
   .use('../search.js', {
     elastic: {
@@ -16,11 +15,7 @@ Seneca({tag: 'search'})
     }
   })
 
-  .use('seneca-repl', {port:10020})
-
-  .listen(9020)
-
-  .client({pin:'role:suggest', port:9050})
+  .client({pin:'role:suggest', host:'suggest', port:PORT})
 
   .ready(function () {
     this.add('role:search,cmd:search', function (msg, reply) {
