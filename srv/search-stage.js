@@ -6,7 +6,6 @@ var ELASTIC = process.env.ELASTIC || 'localhost'
 var Seneca = require('seneca')
 
 Seneca({tag: 'search'})
-  .test('print')
   .listen(PORT)
 
   .use('../search.js', {
