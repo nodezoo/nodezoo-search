@@ -1,0 +1,9 @@
+
+FROM nodezoo-search:1
+
+CMD ["node", "/app/srv/search-prod.js"]
+
+
+
+
+
