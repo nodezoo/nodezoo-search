@@ -6,6 +6,9 @@ var ELASTIC = process.env.ELASTIC || 'localhost'
 var Seneca = require('seneca')
 
 Seneca({tag: 'search'})
+  .use('zipkin-tracer', {host: 'zipkin', sampling: 1})
+  .use('statsd', {host: 'stats'})
+
   .listen(PORT)
 
   .use('../search.js', {

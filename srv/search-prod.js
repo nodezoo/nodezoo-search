@@ -25,6 +25,6 @@ Seneca({tag: 'search'})
     this.add('role:search,cmd:search', function (msg, reply) {
       this.prior(msg, reply)
 
-      this.act('role:suggest,cmd:add,query:'+msg.query)
+      this.act('role:suggest,cmd:add',{query:msg.query,default$:{}})
     })
   })

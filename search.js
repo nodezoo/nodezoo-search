@@ -60,7 +60,7 @@ module.exports = function search (options) {
         }
       }
       
-      reply({items:items})
+      setTimeout( function(){ reply({items:items}) }, 400)
     })
   }
 }

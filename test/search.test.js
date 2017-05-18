@@ -19,7 +19,6 @@ describe('search', function () {
       console.log(payload.toString())
     })
 
-
     var seneca = Seneca()
 
     seneca

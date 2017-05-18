@@ -20,7 +20,7 @@ Seneca({tag: 'search'})
 
   .listen(9020)
 
-  .client({pin:'role:suggest', port:9050})
+  .client({pin:'role:suggest', port:9060})
 
   .ready(function () {
     this.add('role:search,cmd:search', function (msg, reply) {
