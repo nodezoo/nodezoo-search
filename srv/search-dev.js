@@ -23,9 +23,10 @@ Seneca({tag: 'search'})
   .client({pin:'role:suggest', port:9060})
 
   .ready(function () {
-    this.add('role:search,cmd:search', function (msg, reply) {
-      this.prior(msg, reply)
+    this.add('role:search,cmd:search', function cmd_search_suggest(msg, reply) {
+      this.prior(this.util.clean(msg), reply)
 
-      this.act('role:suggest,cmd:add,query:'+msg.query)
+      this.act({role:'suggest', cmd:'add', query:msg.query})
     })
   })
+
