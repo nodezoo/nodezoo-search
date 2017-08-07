@@ -8,8 +8,7 @@ var Seneca = require('seneca')
 
 
 Seneca({tag: 'search'})
-  .test()
-
+  .test('print')
   .use('monitor')
 
   .use('mesh',{
@@ -24,8 +23,9 @@ Seneca({tag: 'search'})
 
   .ready(function () {
     this.add('role:search,cmd:search', function (msg, reply) {
-      this.prior(msg, reply)
+      this.prior(this.util.clean(msg), reply)
 
       this.act('role:suggest,cmd:add,query:'+msg.query)
     })
   })
+
