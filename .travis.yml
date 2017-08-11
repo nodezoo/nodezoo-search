@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 language: node_js
 sudo: false
 
@@ -18,3 +19,19 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+=======
+sudo: required
+language: node_js
+dist: trusty
+
+services:
+  - elasticsearch
+
+before_script:
+  - sleep 33
+
+node_js:
+  - '4'
+  - '6'
+  - '8'
+>>>>>>> tms
