@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-language: node_js
-sudo: false
-
-node_js:
-  - "5"
-  - "4"
-
-env:
-  - CXX=g++-4.8
-
-cache:
-  directories:
-    - node_modules
-    
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-=======
 sudo: required
 language: node_js
 dist: trusty
@@ -34,4 +12,3 @@ node_js:
   - '4'
   - '6'
   - '8'
->>>>>>> tms
