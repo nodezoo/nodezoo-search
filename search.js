@@ -28,10 +28,14 @@ module.exports = function search (options) {
     var url = 'http://'+elastic.host+':'+elastic.port+
           '/'+elastic.base+'/mod/'+msg.data.name
 
+    console.log('INSERT URL: '+url)
+    
     Wreck.post(
       url,
       {json: true, payload: seneca.util.clean(msg.data)},
       function (err, res, payload) {
+        console.log(err)
+
         reply(err, payload)
       })
   }
@@ -45,7 +49,11 @@ module.exports = function search (options) {
     var url = 'http://'+elastic.host+':'+elastic.port+
           '/'+elastic.base+'/_search?q='+encodeURIComponent(msg.query)
 
+    console.log('SEARCH URL: '+url)
+    
     Wreck.get(url, {json: true}, function (err, res, payload) {
+      console.log(err)
+
       if( err ) return reply(err)
 
       var qr = payload
